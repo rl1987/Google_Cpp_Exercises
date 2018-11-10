@@ -9,7 +9,7 @@ int main() {
   int guess = 0;
 
   srand(time(NULL));
-  r = rand() % 100;
+  r = rand() % 100 + 1;
 
   do {
     cout << "What's your guess?" << endl;
