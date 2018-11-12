@@ -16,5 +16,18 @@ int main() {
   // Create an ofstream called People, open the stream for output.
   ofstream People(file_name, ios::out);
   // Write the output to the stream.
-  People << first_name << endl << last_name << endl << age << endl; return 0;
+  People << first_name << endl << last_name << endl << age << endl;
+  
+  ifstream PeopleIn(file_name, std::ifstream::in);
+
+  char c = PeopleIn.get();
+
+  while (PeopleIn.good()) {
+    std::cout << c;
+    c = PeopleIn.get();
+  }
+
+  PeopleIn.close();
+  
+  return 0;
 } 
