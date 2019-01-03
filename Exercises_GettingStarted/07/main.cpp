@@ -2,6 +2,25 @@
 
 using namespace std;
 
+void process_sum(int &sum)
+{
+  do {
+   if (sum == 9) {
+     cout << "sum = 9" << endl;
+     exit(-1);
+   }
+
+   if (sum % 2 == 0)
+     break;
+
+   if (sum + 11 < 20) {
+     sum += 11;
+   } else if (sum - 11 > 0) {
+     sum -= 11;
+   }
+  } while (!(sum > 0 && sum < 20));
+}
+
 int main(void) {
   int abc;
   cout << "Enter 3 digit number" << endl;
@@ -26,53 +45,9 @@ int main(void) {
   int beta = y + z;
   int zetta = z + x;
 
-  do {
-   if (alpha == 9) {
-     cout << "alpha = 9" << endl;
-     return -1;
-   }
-
-   if (alpha % 2 == 0)
-     break;
-
-   if (alpha + 11 < 20) {
-     alpha += 11;
-   } else if (alpha - 11 > 0) {
-     alpha -= 11;
-   }
-  } while (!(alpha > 0 && alpha < 20));
-
-  do {
-   if (beta == 9) {
-     cout << "beta = 9" << endl;
-     return -1;
-   }
-
-   if (beta % 2 == 0)
-     break;
-
-   if (beta + 11 < 20) {
-     beta += 11;
-   } else if (beta - 11 > 0) {
-     beta -= 11;
-   }
-  } while (!(beta > 0 && beta < 20));
-
-  do {
-   if (zetta == 9) {
-     cout << "zetta = 9" << endl;
-     return -1;
-   }
-
-   if (zetta % 2 == 0)
-     break;
-
-   if (zetta + 11 < 20) {
-     zetta += 11;
-   } else if (zetta - 11 > 0) {
-     zetta -= 11;
-   }
-  } while (!(zetta > 0 && zetta < 20));
+  process_sum(alpha);
+  process_sum(beta);
+  process_sum(zetta);
 
   alpha /= 2;
   beta /= 2;
